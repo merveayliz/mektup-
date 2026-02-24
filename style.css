@@ -1,9 +1,7 @@
-/* style.css */
-
 :root {
     --primary-pink: #ff4d6d;
     --envelope-color: #d4a373;
-    --paper-color: #fcf5e5; /* Eskimiş kağıt tonu */
+    --paper-color: #fcf5e5;
 }
 
 body {
@@ -11,16 +9,16 @@ body {
     padding: 0;
     width: 100%;
     height: 100vh;
-    overflow: hidden; /* Taşmaları önler */
-    display: flex; /* İçeriği merkeze almak için */
-    justify-content: center; /* Yatay merkez */
-    align-items: center; /* Dikey merkez */
+    overflow: hidden; 
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
     background: #f00000;
     font-family: 'Poppins', sans-serif;
     transition: background 1.5s ease;
 }
 
-/* Şık Buton Tasarımı */
+
 #changeMsgBtn {
     margin-top: 25px;
     background: linear-gradient(45deg, var(--primary-pink), var(--dark-pink));
@@ -45,7 +43,7 @@ body.pink-mode { background: #ffb3c1; }
 
 #heartCanvas { position: absolute; top: 0; left: 0; z-index: -1; }
 
-/* Kart ve Yazıların Mobil Uyumu */
+
 .card {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
@@ -53,16 +51,16 @@ body.pink-mode { background: #ffb3c1; }
     border-radius: 20px;
     text-align: center;
     color: white;
-    width: 80%; /* Mobilde ekranın %80'ini kaplar */
-    max-width: 400px; /* Büyük ekranlarda 400px'i geçmez */
+    width: 80%; 
+    max-width: 400px; 
 }
 
-/* Zarf Tasarımı ve Merkezleme */
+
 #letter-page {
-    position: fixed; /* Her zaman ekranın üstünde kalır */
+    position: fixed; 
     top: 0; left: 0;
     width: 100%; height: 100%;
-    display: none; /* Başta kapalı */
+    display: none;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -80,7 +78,7 @@ body.pink-mode { background: #ffb3c1; }
     align-items: center;
     transition: transform 0.3s;
 }
-/* style.css içindeki .letter-paper kısmını bu şekilde güncelle */
+
 .letter-paper {
     background: var(--paper-color);
     padding: 20px;
@@ -91,21 +89,21 @@ body.pink-mode { background: #ffb3c1; }
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     border-radius: 2px;
     
-    /* DEĞİŞİKLİK BURADA: */
-    position: absolute; /* Zarf ile aynı konumda başlasın */
-    opacity: 0; /* Başlangıçta tamamen şeffaf (görünmez) olsun */
-    pointer-events: none; /* Görünmezken tıklamaları engeller */
-    transform: scale(0.1) translateY(200px); /* Hem küçük hem de aşağıda başlasın */
+   
+    position: absolute; 
+    opacity: 0; 
+    pointer-events: none; 
+    transform: scale(0.1) translateY(200px);
     transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     font-family: 'Dancing Script', cursive;
-    z-index: 5; /* Zarfın altında veya üstünde olması fark etmez çünkü opacity 0 */
+    z-index: 5; 
 }
 
-/* Mektup açıldığında devreye girecek olan kısım */
+
 .letter-paper.open {
-    opacity: 1; /* Görünür yap */
-    pointer-events: auto; /* Tıklanabilir yap */
-    transform: scale(1) translateY(0); /* Merkeze getir ve büyüt */
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1) translateY(0);
 }
 
 .couple-img {
@@ -114,7 +112,7 @@ body.pink-mode { background: #ffb3c1; }
     box-sizing: border-box;
 }
 
-/* MOBİL ÖZEL AYARLAR */
+
 @media (max-width: 600px) {
     h1 { font-size: 1.2rem; }
     .card { padding: 1rem; }
@@ -123,8 +121,9 @@ body.pink-mode { background: #ffb3c1; }
     h2 { font-size: 1.1rem; }
 }
 
-/* Butonun yok olma animasyonu (Sadece en son aşamada) */
+
 .shatter {
     animation: fadeOut 0.5s forwards;
 }
+
 @keyframes fadeOut { to { opacity: 0; transform: scale(0); } }
