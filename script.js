@@ -1,6 +1,3 @@
-// script.js
-
-// 1. Canvas Arka Plan (Her zamanki gibi)
 const canvas = document.getElementById('heartCanvas');
 const ctx = canvas.getContext('2d');
 let particles = [];
@@ -42,7 +39,6 @@ function animate() {
 }
 animate();
 
-// 2. Akış Mantığı
 const messages = [
     "Seninle geçen her saniye çok kıymetli.",
     "Dünyanın en şanslı yazılımcısı benim...",
@@ -56,32 +52,33 @@ const textElement = document.getElementById('message');
 
 btn.addEventListener('click', function() {
     if (messageIndex < messages.length - 1) {
-        // Mesajları sırayla döndürür
+       
         messageIndex++;
         textElement.textContent = messages[messageIndex];
     } else {
-        // SON AŞAMA: Her şeyi temizle ve pembeye geç
-        document.getElementById('intro-section').style.display = 'none'; // İlk bölümü TAMAMEN yok et
-        document.body.style.background = "#ffb3c1"; // Arka planı pembeye boya
-        heartColor = "255, 255, 255"; // Kalpleri beyaza çevir (görünürlük için)
+       
+        document.getElementById('intro-section').style.display = 'none'; 
+        document.body.style.background = "#ffb3c1"; 
+        heartColor = "255, 255, 255"; 
 
         const letterPage = document.getElementById('letter-page');
-        letterPage.style.display = 'flex'; // Zarfı ekrana getir
+        letterPage.style.display = 'flex'; 
 
-        // Zarf tıklama olayı
-        // script.js içindeki zarf tıklama olayını şu şekilde kontrol et:
+       
+        
 document.getElementById('envelope').onclick = function() {
-    this.style.display = 'none'; // Zarfı tamamen kaldır
+    this.style.display = 'none'; 
     const letter = document.getElementById('letter');
     
-    // Mektubu görünür yap ve animasyonu başlat
-    letter.classList.remove('hidden'); // Eğer HTML'de hidden varsa kaldır
+   
+    letter.classList.remove('hidden'); 
     
-    // Tarayıcının değişikliği algılaması için çok kısa bir süre tanı
+   
     setTimeout(() => {
         letter.classList.add('open'); 
         document.getElementById('loveSong').play(); 
     }, 50);
 };
     }
+
 });
