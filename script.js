@@ -78,7 +78,6 @@ document.getElementById('envelope').onclick = function() {
         letter.classList.add('open'); 
         document.getElementById('loveSong').play(); 
     }, 50);
-};
-    }
-
+  };
+ }
 });
